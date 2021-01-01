@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="django_ajax.js"></script>
+
+    <title>EXAMPLE FORM - WITH AJAX</title>
+  </head>
+  <body>
+    <!-- Poor job of creating form - Should work for example   -->
+    <form
+      class="form-product-ajax"
+      method="POST"
+      action="{% url liked-post: add-to-sqlite %}"
+      class="form"
+    >
+      {% csrf-token%}
+      <input type="foo" name="liked-post" value="{{" liked-post.id}} />
+
+      {% if liked %}
+      <button type="submit" class="liked-button-foo">
+        do something if liked
+      </button>
+      {% else %}
+      <button type="submit" class="Not-liked-button-bar">
+        bar - not sure how this went
+      </button>
+      {% endif %}
+    </form>
+  </body>
+</html>
